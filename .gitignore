@@ -1,4 +1,4 @@
-/bin
-/config.properties
 .classpath
 .project
+/bin
+/config.properties
