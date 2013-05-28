@@ -1,2 +1,3 @@
 /bin
-/src/com/nokia/config/Config.java
+/config.properties
+.classpath
