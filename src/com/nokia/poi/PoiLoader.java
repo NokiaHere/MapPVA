@@ -1,5 +1,11 @@
 package com.nokia.poi;
 
+/**
+ * @author huayili
+ * 
+ * the PoiLoader support function that loads POIs from rdf files to a list of POIs class
+ */
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -26,19 +32,19 @@ public class PoiLoader {
 				int index = line.indexOf(delimiter);
 				int fieldIdx = 0;
 				String id = "";
-				float lat = -200;
-				float lon = -200;
+				double lat = -200;
+				double lon = -200;
 				while(index >= 0){
 					if(fieldIdx == 0) id = line.substring(preIndex,index);
 					if(fieldIdx == 6) {
 						if(line.substring(preIndex,index).trim().length() > 0){
-							lat = Float.parseFloat(line.substring(preIndex,index)) /100000;
+							lat = Double.parseDouble(line.substring(preIndex,index)) /100000;
 						}
 						
 					}
 					if(fieldIdx == 7) {
 						if(line.substring(preIndex,index).trim().length() > 0){
-							lon = Float.parseFloat(line.substring(preIndex,index)) /100000;
+							lon = Double.parseDouble(line.substring(preIndex,index)) /100000;
 						}
 					}
 					preIndex = index;
